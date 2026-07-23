@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // GET /api/katalog - List produk read-only untuk mobile
     Route::get('/katalog', [ProdukController::class, 'katalog']);
+
+    // GET /api/dashboard - Summary total produk, pesanan, dan status pesanan
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
 });
